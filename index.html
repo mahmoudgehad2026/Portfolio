@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Mahmoud Gehad | Senior Architectural & Fit-out Engineer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #c5a059;
+            --primary-dark: #a3813e;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border: #e9ecef;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        body.lang-en, body.lang-hi {
+            direction: ltr;
+        }
+        body.lang-en { font-family: 'Inter', sans-serif; }
+        body.lang-hi { font-family: 'Noto Sans Devanagari', sans-serif; }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--light);
+            padding: 0.25rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        section {
+            padding: 6rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            padding-top: 8rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(50%);
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .timeline-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-item span {
+            display: inline-block;
+            background: var(--light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-img-placeholder {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 2rem;
+        }
+
+        .gallery-info {
+            padding: 1.25rem;
+        }
+
+        .gallery-info h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 6rem;
+            }
+            .timeline::before {
+                right: 0;
+            }
+            .timeline-item {
+                width: 100%;
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Eng. Mahmoud <span>Gehad</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-about">النبذة المهنية</a></li>
+                <li><a href="#experience" class="nav-exp">الخبرات</a></li>
+                <li><a href="#projects" class="nav-projects">المشاريع والمعرض</a></li>
+                <li><a href="#contact" class="nav-contact">تواصل معي</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('ar')">عربي</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('hi')">हिन्दी</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">مهندس محمود جهاد</h1>
+            <p class="hero-subtitle">مهندس معماري وتشطيبات أول (Senior Architectural & Fit-out Engineer) متخصص في إدارة المواقع، ضبط الجودة QA/QC، وتنفيذ المشاريع الكبرى.</p>
+            <a href="#projects" class="btn"><span class="btn-text">استعرض أعمالي</span> <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <h2 class="section-title exp-title">السجل المهني والخبرات</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3 class="exp-role-1">مهندس مشاريع (مشروع فندق الهيلتون بالأحساء)</h3>
+                <h4>Green Square</h4>
+                <span>أغسطس 2026 – حتى الآن</span>
+                <p class="exp-desc-1">إدارة تنفيذ أعمال التشطيبات المتقدمة وضبط الجودة بمعايير عالمية.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Bikar Design & Build</h3>
+                <h4>مهندس تشطيبات وتنفيذ (مشروع Kidsarena & Root Café)</h4>
+                <span>يوليو 2025 – يوليو 2026</span>
+                <p class="exp-desc-2">مراجعة Shop Drawings والتنفيذ الميداني لمشاريع الترفيه والضيافة.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Fine Arts Contracting</h3>
+                <h4>مهندس موقع أول</h4>
+                <span>أكتوبر 2024 – يونيو 2025</span>
+            </div>
+            <div class="timeline-item">
+                <h3>Vanguard</h3>
+                <h4>مهندس تنفيذ وتشطيبات</h4>
+                <span>أبريل 2024 – سبتمبر 2024</span>
+            </div>
+            <div class="timeline-item">
+                <h3>شركة الأنصار (مستشفى رأس التين)</h3>
+                <h4>مهندس موقع</h4>
+                <span>سبتمبر 2021 – أغسطس 2023</span>
+            </div>
+            <div class="timeline-item">
+                <h3>شركة الخلود</h3>
+                <h4>مهندس تشطيبات</h4>
+                <span>سبتمبر 2020 – أكتوبر 2021</span>
+            </div>
+            <div class="timeline-item">
+                <h3>القطاع الهندسي للقوات المسلحة</h3>
+                <h4>مهندس تنفيذي</h4>
+                <span>سبتمبر 2019 – سبتمبر 2020</span>
+            </div>
+            <div class="timeline-item">
+                <h3>مكتب المنهل الاستشاري</h3>
+                <h4>مهندس معماري متدرب / مساعد</h4>
+                <span>يونيو 2018 – سبتمبر 2019</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects">
+        <h2 class="section-title proj-title">معرض المشاريع والأعمال الميدانية</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <div class="gallery-img-placeholder"><i class="fas fa-hotel"></i></div>
+                <div class="gallery-info">
+                    <h4>Hilton Hotel - Al-Ahsa</h4>
+                    <p>Green Square | أعمال الواجهات والتشطيبات الكلاسيكية وميزان الليزر.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-placeholder"><i class="fas fa-store"></i></div>
+                <div class="gallery-info">
+                    <h4>Kidsarena Project</h4>
+                    <p>Bikar Design & Build | Shop Drawings وتنفيذ الاستقبال وغرف الحفلات.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-placeholder"><i class="fas fa-coffee"></i></div>
+                <div class="gallery-info">
+                    <h4>Root Café Fit-out</h4>
+                    <p>Bikar Design & Build | تنفيذ الدكتات، الإضاءات المخفية، وأعمال الخشب الفاخر.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Eng. Mahmoud Gehad. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; color: var(--primary);">Senior Architectural & Fit-out Engineer</p>
+    </footer>
+
+    <!-- Translations Script -->
+    <script>
+        const translations = {
+            ar: {
+                navAbout: "النبذة المهنية",
+                navExp: "الخبرات",
+                navProjects: "المشاريع والمعرض",
+                navContact: "تواصل معي",
+                heroTitle: "مهندس محمود جهاد",
+                heroSubtitle: "مهندس معماري وتشطيبات أول (Senior Architectural & Fit-out Engineer) متخصص في إدارة المواقع، ضبط الجودة QA/QC، وتنفيذ المشاريع الكبرى.",
+                btnText: "استعرض أعمالي",
+                expTitle: "السجل المهني والخبرات",
+                projTitle: "معرض المشاريع والأعمال الميدانية"
+            },
+            en: {
+                navAbout: "About",
+                navExp: "Experience",
+                navProjects: "Projects",
+                navContact: "Contact",
+                heroTitle: "Eng. Mahmoud Gehad",
+                heroSubtitle: "Senior Architectural & Fit-out Engineer specialized in site management, QA/QC, and executing mega projects.",
+                btnText: "Explore Works",
+                expTitle: "Professional Experience",
+                projTitle: "Projects & Site Gallery"
+            },
+            hi: {
+                navAbout: "परिचय",
+                navExp: "अनुभव",
+                navProjects: "परियोजनाएं",
+                navContact: "संपर्क करें",
+                heroTitle: "इंजी. महमूद जिहाद",
+                heroSubtitle: "सीनियर आर्किटेक्चरल और फिट-आउट इंजीनियर, साइट मैनेजमेंट और क्यूए/क्यूएसी में विशेषज्ञ।",
+                btnText: "कार्य देखें",
+                expTitle: "व्यावसायिक अनुभव",
+                projTitle: "परियोजना गैलरी"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.body.className = `lang-${lang}`;
+            
+            // Apply translations
+            if (translations[lang]) {
+                document.querySelector('.nav-about').textContent = translations[lang].navAbout;
+                document.querySelector('.nav-exp').textContent = translations[lang].navExp;
+                document.querySelector('.nav-projects').textContent = translations[lang].navProjects;
+                document.querySelector('.nav-contact').textContent = translations[lang].navContact;
+                document.querySelector('.hero-title').textContent = translations[lang].heroTitle;
+                document.querySelector('.hero-subtitle').textContent = translations[lang].heroSubtitle;
+                document.querySelector('.btn-text').textContent = translations[lang].btnText;
+                document.querySelector('.exp-title').textContent = translations[lang].expTitle;
+                document.querySelector('.proj-title').textContent = translations[lang].projTitle;
+            }
+        }
+    </script>
+</body>
+</html>
